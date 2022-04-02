@@ -1,4 +1,6 @@
 import './App.css'
+// Kalo gabisa pake ini 
+// import Navbar from "./components/navbar/Navbar";
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
 import Services from './components/Services/Services';
