@@ -20,7 +20,7 @@ const Navbar = () => {
                 </div>
                 <button className='button n-button'>Contact</button>
             </div>
-        </div >
+        </div>
     )
 }
 
