@@ -12,8 +12,11 @@ import Glass from '../../img/glassesimoji.png'
 import FloatingDiv from '../FloatingDiv/FloatingDiv'
 import { themeContext } from '../../Context'
 import { useContext } from 'react'
+import { motion } from 'framer-motion'
 
 const Intro = () => {
+    const transition = { duration: 2, type: 'spring' }
+
     const theme = useContext(themeContext)
     const darkMode = theme.state.darkMode
     return (
@@ -36,11 +39,27 @@ const Intro = () => {
                 <img src={Vector1} alt="" />
                 <img src={Vector2} alt="" />
                 <img src={Boy} alt="" />
-                <img src={Glass} alt='' />
-                <div style={{ top: '-4%', left: '68%' }}>
+                <motion.img
+                    src={Glass}
+                    alt=''
+                    initial={{ left: '-36%' }}
+                    whileInView={{ left: '-24%' }}
+                    transition={transition}
+                />
+                <motion.div
+                    initial={{ top: '-4%', left: '74%' }}
+                    whileInView={{ left: '68%' }}
+                    style={{ top: '-4%', left: '68%' }}
+                    transition={transition}
+                >
                     <FloatingDiv image={Crown} txt1='Web' txt2='Developer' />
-                </div>
-                <div style={{ top: '18rem', left: '0rem' }}>
+                </motion.div>
+                <div
+                    initial={{ top: '9rem', left: '18rem' }}
+                    whileInView={{ left: '0rem' }}
+                    transition={transition}
+                    style={{ top: '18rem', left: '0rem' }}
+                >
                     <FloatingDiv image={ThumbUp} txt1='Best Design' txt2='Award' />
                 </div>
 

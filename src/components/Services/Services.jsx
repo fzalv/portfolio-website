@@ -7,8 +7,10 @@ import Card from "../Card/Card";
 import Resume from './resume.pdf';
 import { themeContext } from '../../Context'
 import { useContext } from 'react'
+import { motion } from 'framer-motion'
 
 const Services = () => {
+    const transition = { duration: 1, type: 'spring' }
     const theme = useContext(themeContext)
     const darkMode = theme.state.darkMode
     return (
@@ -31,23 +33,35 @@ const Services = () => {
             {/* right side */}
             <div className="cards">
                 {/* first card */}
-                <div style={{ left: '14rem' }}>
+                <motion.div
+                    whileInView={{ left: '14rem' }}
+                    initial={{ left: '25rem' }}
+                    transition={transition}
+                    style={{ left: '14rem' }}>
                     <Card
                         emoji={Heart}
                         heading={'Design'}
                         detail={"Figma, Sketch, Photoshop, Adobe, Adobe xd"}
                     />
-                </div>
+                </motion.div>
                 {/* second card */}
-                <div style={{ top: "12rem", left: '-4rem' }}>
+                <motion.div
+                    whileInView={{ left: '-4rem' }}
+                    initial={{ left: '10rem' }}
+                    transition={transition}
+                    style={{ top: "12rem", left: '-4rem' }}>
                     <Card
                         emoji={Glasses}
                         heading={'Developer'}
                         detail={"Html, Css, JavaScript, React, Nodejs, Express"}
                     />
-                </div>
+                </motion.div>
                 {/* 3rd */}
-                <div style={{ top: "19rem", left: '12rem' }}>
+                <motion.div
+                    whileInView={{ left: '12rem' }}
+                    initial={{ left: '25rem' }}
+                    transition={transition}
+                    style={{ top: "19rem", left: '12rem' }}>
                     <Card
                         emoji={Humble}
                         heading={"UI/UX"}
@@ -56,13 +70,13 @@ const Services = () => {
                         }
                         color="rgba(252, 166, 31, 0.45)"
                     />
-                </div>
+                </motion.div>
                 <div
                     className="blur s-blur2"
                     style={{ background: "var(--purple)" }}
                 ></div>
             </div>
-        </div>
+        </div >
     )
 }
 
