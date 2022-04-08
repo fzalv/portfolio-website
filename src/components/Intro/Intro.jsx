@@ -51,17 +51,19 @@ const Intro = () => {
                     whileInView={{ left: '68%' }}
                     style={{ top: '-4%', left: '68%' }}
                     transition={transition}
+                    className='floating-div'
                 >
                     <FloatingDiv image={Crown} txt1='Web' txt2='Developer' />
                 </motion.div>
-                <div
+                <motion.div
                     initial={{ top: '9rem', left: '18rem' }}
                     whileInView={{ left: '0rem' }}
                     transition={transition}
                     style={{ top: '18rem', left: '0rem' }}
+                    className='floating-div'
                 >
                     <FloatingDiv image={ThumbUp} txt1='Best Design' txt2='Award' />
-                </div>
+                </motion.div>
 
                 {/* Blure Divs */}
                 <div className="blur" style={{ background: "rgb(238 210 255)" }}>
